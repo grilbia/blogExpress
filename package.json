@@ -1,0 +1,21 @@
+{
+  "name": "blogexpress",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm init",
+    "dev": "nodemon app.js",
+    "start": "app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "express-router": "^0.0.1",
+    "mongoose": "^9.1.5"
+  }
+}

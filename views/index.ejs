@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Modern Social Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
+        
+        .glassmorphism-dark {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .sidebar-icon {
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-icon:hover {
+            background-color: rgba(99, 102, 241, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .active-icon {
+            background-color: rgba(99, 102, 241, 0.15);
+            color: #4f46e5;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="min-h-screen flex" style="background-color: #F9FAFB;">
+        <!-- Sidebar Navigation -->
+        <aside class="w-20 lg:w-64 glassmorphism-dark h-screen fixed left-0 top-0 z-10 flex flex-col py-8 px-4 lg:px-6">
+            <!-- Logo -->
+            <div class="mb-10 px-2">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-infinity text-white text-lg"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold hidden lg:block gradient-text">Nexus</h1>
+                </div>
+            </div>
+            
+            <!-- Navigation Icons -->
+            <nav class="flex-1">
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon active-icon">
+                            <i class="fas fa-home text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                            <i class="fas fa-user-friends text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Network</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                            <i class="fas fa-bell text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Notifications</span>
+                            <span class="ml-auto bg-indigo-500 text-white text-xs rounded-full px-2 py-1 hidden lg:block">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                            <i class="fas fa-envelope text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Messages</span>
+                            <span class="ml-auto bg-indigo-500 text-white text-xs rounded-full px-2 py-1 hidden lg:block">5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                            <i class="fas fa-bookmark text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Saved</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                            <i class="fas fa-chart-line text-xl lg:text-lg"></i>
+                            <span class="ml-4 font-medium hidden lg:block">Analytics</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="mt-10 pt-8 border-t border-gray-200">
+                    <div class="flex items-center justify-center lg:justify-start p-3 rounded-2xl sidebar-icon">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                            AJ
+                        </div>
+                        <div class="ml-4 hidden lg:block">
+                            <p class="font-medium">Alex Johnson</p>
+                            <p class="text-sm text-gray-500">@alexj</p>
+                        </div>
+                        <i class="fas fa-chevron-down ml-auto hidden lg:block text-gray-400"></i>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 ml-20 lg:ml-64 p-4 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header -->
+                <header class="mb-10">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-900">Welcome back, Alex</h2>
+                            <p class="text-gray-500 mt-2">Here's what's happening in your network today.</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <button class="glassmorphism p-3 rounded-2xl hover:bg-white transition">
+                                <i class="fas fa-search text-gray-500"></i>
+                            </button>
+                            <button class="glassmorphism p-3 rounded-2xl hover:bg-white transition">
+                                <i class="fas fa-cog text-gray-500"></i>
+                            </button>
+                            <button class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-5 py-3 rounded-2xl font-medium hover:from-indigo-600 hover:to-indigo-700 transition shadow-md">
+                                <i class="fas fa-plus mr-2"></i> Create Post
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Main Feed (8 columns) -->
+                    <div class="lg:col-span-8">
+                        <!-- Create Post -->
+                        <div class="glassmorphism rounded-3xl p-6 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+                                    AJ
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <input type="text" placeholder="Share your thoughts..." class="w-full p-4 bg-gray-50 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-transparent">
+                                </div>
+                            </div>
+                            <div class="flex justify-between mt-6">
+                                <div class="flex space-x-4">
+                                    <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                        <i class="fas fa-image mr-2"></i> Photo
+                                    </button>
+                                    <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                        <i class="fas fa-video mr-2"></i> Video
+                                    </button>
+                                    <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                        <i class="fas fa-calendar-alt mr-2"></i> Event
+                                    </button>
+                                </div>
+                                <button class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-2 rounded-xl font-medium">
+                                    Post
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Feed Filters -->
+                        <div class="flex space-x-4 mb-6 overflow-x-auto pb-2">
+                            <button class="bg-white px-5 py-3 rounded-2xl font-medium shadow-sm whitespace-nowrap">For You</button>
+                            <button class="glassmorphism px-5 py-3 rounded-2xl font-medium whitespace-nowrap">Following</button>
+                            <button class="glassmorphism px-5 py-3 rounded-2xl font-medium whitespace-nowrap">Trending</button>
+                            <button class="glassmorphism px-5 py-3 rounded-2xl font-medium whitespace-nowrap">Design</button>
+                            <button class="glassmorphism px-5 py-3 rounded-2xl font-medium whitespace-nowrap">Tech</button>
+                            <button class="glassmorphism px-5 py-3 rounded-2xl font-medium whitespace-nowrap">Arts</button>
+                        </div>
+
+                        <!-- Feed Posts -->
+                        <div class="space-y-8" id="post-container">
+                            <!-- Post 1 -->
+                            <div class="glassmorphism rounded-3xl overflow-hidden card-hover">
+                                <div class="p-6">
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            MK
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">Maya Khan</h4>
+                                            <p class="text-gray-500 text-sm">UI/UX Designer • 2 hours ago</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="fas fa-ellipsis-h text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6">
+                                        <p class="text-gray-700">Just launched a new design system for our latest project! Glassmorphism combined with vibrant gradients is definitely the way to go for modern interfaces. What do you think?</p>
+                                        <div class="mt-6 rounded-2xl overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="UI Design" class="w-full h-64 object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-100">
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-heart mr-2"></i> 124
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-comment mr-2"></i> 42
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-bookmark mr-2"></i> Save
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="fas fa-share mr-2"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 2 -->
+                            <div class="glassmorphism rounded-3xl overflow-hidden card-hover">
+                                <div class="p-6">
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-white font-bold">
+                                            DR
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">David Rivera</h4>
+                                            <p class="text-gray-500 text-sm">Frontend Developer • 5 hours ago</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="fas fa-ellipsis-h text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6">
+                                        <p class="text-gray-700">Just wrote a comprehensive guide on implementing Glassmorphism with Tailwind CSS. This design trend is more than just aesthetics—it's about creating depth and hierarchy in interfaces.</p>
+                                        <div class="mt-4 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
+                                            <p class="text-indigo-700 font-medium">💡 Tip: Use backdrop-filter with a blur value and a semi-transparent background to achieve the glass effect.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-100">
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-heart mr-2"></i> 89
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-comment mr-2"></i> 23
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-bookmark mr-2"></i> Save
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="fas fa-share mr-2"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 3 -->
+                            <div class="glassmorphism rounded-3xl overflow-hidden card-hover">
+                                <div class="p-6">
+                                    <div class="flex items-start">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-bold">
+                                            SC
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">Sarah Chen</h4>
+                                            <p class="text-gray-500 text-sm">Product Manager • 1 day ago</p>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="fas fa-ellipsis-h text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6">
+                                        <p class="text-gray-700">Our team just hit 100K users on Nexus! 🎉 Thanks to everyone for the incredible support. We're working on some exciting new features including dark mode and advanced analytics.</p>
+                                        <div class="mt-6 grid grid-cols-2 gap-4">
+                                            <div class="rounded-2xl overflow-hidden">
+                                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Celebration" class="w-full h-40 object-cover">
+                                            </div>
+                                            <div class="rounded-2xl overflow-hidden">
+                                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Analytics" class="w-full h-40 object-cover">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between mt-6 pt-6 border-t border-gray-100">
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-heart mr-2"></i> 312
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-comment mr-2"></i> 67
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="far fa-bookmark mr-2"></i> Save
+                                        </button>
+                                        <button class="flex items-center text-gray-500 hover:text-indigo-600">
+                                            <i class="fas fa-share mr-2"></i> Share
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trending Widget (4 columns) -->
+                    <div class="lg:col-span-4">
+                        <div class="glassmorphism rounded-3xl p-6 sticky top-8">
+                            <h3 class="text-xl font-bold mb-6 flex items-center">
+                                <i class="fas fa-fire text-orange-500 mr-3"></i> Trending Now
+                            </h3>
+                            
+                            <!-- Trending Topics -->
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-indigo-600 font-bold mr-4">
+                                        1
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">#GlassmorphismUI</h4>
+                                        <p class="text-gray-500 text-sm mt-1">12.5K posts</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center text-blue-600 font-bold mr-4">
+                                        2
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">#TailwindCSS</h4>
+                                        <p class="text-gray-500 text-sm mt-1">8.2K posts</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center text-green-600 font-bold mr-4">
+                                        3
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">#Web3Design</h4>
+                                        <p class="text-gray-500 text-sm mt-1">6.7K posts</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-yellow-600 font-bold mr-4">
+                                        4
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">#MinimalistDesign</h4>
+                                        <p class="text-gray-500 text-sm mt-1">5.4K posts</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center text-pink-600 font-bold mr-4">
+                                        5
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">#AppleAesthetics</h4>
+                                        <p class="text-gray-500 text-sm mt-1">4.9K posts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-8 border-t border-gray-100">
+                                <h3 class="text-xl font-bold mb-6 flex items-center">
+                                    <i class="fas fa-user-plus text-indigo-500 mr-3"></i> Suggested Connections
+                                </h3>
+                                
+                                <div class="space-y-5">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                                            JP
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">Jordan Park</h4>
+                                            <p class="text-gray-500 text-sm">Design Director</p>
+                                        </div>
+                                        <button class="ml-auto bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-xl text-sm font-medium transition">
+                                            Connect
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                                            LM
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">Lisa Monroe</h4>
+                                            <p class="text-gray-500 text-sm">UX Researcher</p>
+                                        </div>
+                                        <button class="ml-auto bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-xl text-sm font-medium transition">
+                                            Connect
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-teal-500 flex items-center justify-center text-white font-bold">
+                                            RK
+                                        </div>
+                                        <div class="ml-4">
+                                            <h4 class="font-bold">Ryan Kim</h4>
+                                            <p class="text-gray-500 text-sm">Frontend Engineer</p>
+                                        </div>
+                                        <button class="ml-auto bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-xl text-sm font-medium transition">
+                                            Connect
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-8 border-t border-gray-100">
+                                <p class="text-gray-500 text-sm">© 2023 Nexus. All rights reserved.</p>
+                                <div class="flex space-x-4 mt-4">
+                                    <a href="#" class="text-gray-400 hover:text-indigo-600"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-indigo-600"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="text-gray-400 hover:text-indigo-600"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
