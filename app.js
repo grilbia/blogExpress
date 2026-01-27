@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import router from './server/routes/main.js';
 import connectDB from './server/config/db.js';
+
 dotenv.config();
 
 const app = express();
