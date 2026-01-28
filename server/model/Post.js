@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import User from "./User";
 
 const Schema = mongoose.Schema;
-
+ 
 const Post = new Schema({
     content: {
         type: String,
