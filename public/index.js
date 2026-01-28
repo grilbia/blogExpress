@@ -1,4 +1,4 @@
-const posts = [];
+let posts = [];
 const postContainer = document.getElementById('post-container');
 
 function renderPosts(posts) {
@@ -71,12 +71,12 @@ function getInitials(name) {
     .toUpperCase();
 }
 
+const loadPosts = async () => {
+  const res = await fetch('/api/posts');
+  const data = await res.json();
 
-const loadPosts = async () =>{
-    const res = await fetch('/api/posts');
-    const data = await res.json();
-    
-    posts = data.posts || [];
+  posts = data.posts || [];
+  renderPosts(posts);
+};
 
-    renderPosts()
-}
+loadPosts();

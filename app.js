@@ -8,12 +8,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
+
 app.set('view engine', 'ejs');
+app.use('/', router);
 app.set(express.static('public'));
 
 connectDB();
 
-app.use('/', router);
+
 
 
 app.listen(PORT, ()=>{
