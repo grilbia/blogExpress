@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import User from "./User";
 
 const Schema = mongoose.Schema;
  
@@ -10,7 +9,11 @@ const Post = new Schema({
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: User
+        ref: 'User'
+    },
+    like: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Like'
     }
 })
 
